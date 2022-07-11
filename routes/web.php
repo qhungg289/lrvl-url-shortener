@@ -14,4 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LinkController::class, 'index']);
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/{code}', [LinkController::class, 'redirect']);
+
+Route::get('/link/create', [LinkController::class, 'create']);
+
+Route::post('/link/create', [LinkController::class, 'store']);
