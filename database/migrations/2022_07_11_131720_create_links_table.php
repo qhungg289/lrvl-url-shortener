@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('user_id')->nullable();
             $table->string('destination');
-            $table->string('short_code');
+            $table->string('short_code')->nullable();
+            $table->integer('visits_count')->default(0);
         });
     }
 
