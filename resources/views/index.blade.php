@@ -1,10 +1,10 @@
 <x-layout>
     <main class="min-h-[calc(100vh-10rem)] flex flex-col justify-center">
         <div>
-            <h1 class="text-9xl font-black mb-3 tracking-widest">LRVL</h1>
-            <p class="text-slate-400 mb-6">Free & Open Source URL shortener service</p>
+            <h1 class="text-6xl sm:text-9xl lg:text-10xl font-black mb-3 tracking-widest">LRVL</h1>
+            <p class="text-slate-400 mb-6 lg:text-lg">Free & Open Source URL shortener service</p>
             <a href="/link"
-                class="bg-blue-600 px-5 py-2 rounded-md w-fit hover:opacity-90 transition-opacity flex items-center">
+                class="bg-blue-700 px-5 py-2 rounded-md w-fit hover:opacity-90 transition-opacity flex items-center">
                 <span>Get started</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
