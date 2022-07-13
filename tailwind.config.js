@@ -10,6 +10,9 @@ module.exports = {
             fontFamily: {
                 nunito: ["Nunito", "sans-serif"],
             },
+            fontSize: {
+                "10xl": "18rem",
+            },
         },
         container: {
             center: true,
