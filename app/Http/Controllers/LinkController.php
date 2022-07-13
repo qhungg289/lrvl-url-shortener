@@ -20,13 +20,17 @@ class LinkController extends Controller
         ]);
 
         $link = Link::create([
-            'destination' => $validated['link']
+            'destination' => $validated['link'],
+            'user_id' => $request->user()?->id
         ]);
 
         $link->short_code = $base62->encode($link->id);
         $link->save();
 
-        return view('link.create', ['short_link' => url($link->short_code), 'full_link' => $link->destination]);
+        return view('link.create', [
+            'short_link' => url($link->short_code),
+            'full_link' => $link->destination
+        ]);
     }
 
     public function redirect($code)
