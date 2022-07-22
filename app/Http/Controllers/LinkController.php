@@ -27,10 +27,17 @@ class LinkController extends Controller
         $link->short_code = $base62->encode($link->id);
         $link->save();
 
-        return view('link.create', [
+        return redirect()->route('create')->with([
             'short_link' => url($link->short_code),
             'full_link' => $link->destination
         ]);
+    }
+
+    public function delete(Request $request)
+    {
+        Link::destroy($request->input('id'));
+
+        return redirect('/profile');
     }
 
     public function redirect($code)
@@ -41,8 +48,7 @@ class LinkController extends Controller
             return abort(404);
         }
 
-        $link->visits_count += 1;
-        $link->save();
+        $link->increment('visit_count');
 
         return redirect()->away($link->destination);
     }
