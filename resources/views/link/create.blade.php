@@ -8,38 +8,39 @@
             <div class="flex flex-col mb-3">
                 <label for="link" class="text-slate-400 mb-1">Your full link</label>
 
-                @isset($full_link)
-                    <input type="text" name="link" id="link" readonly value="{{ $full_link }}"
+                @if (session('full_link'))
+                    <input type="text" name="link" id="link" readonly value="{{ session('full_link') }}"
                         class="bg-slate-800 rounded-md border-slate-600 mb-1">
                 @else
                     <input type="text" name="link" id="link" placeholder="Paste your link in here..."
                         value="{{ old('link') }}" class="bg-slate-800 rounded-md border-slate-600 mb-1">
-                @endisset
+                @endif
 
                 @error('link')
                     <p class="text-red-500">{{ $message }}</p>
                 @enderror
             </div>
 
-            @empty($short_link)
+            @empty(session('short_link'))
                 <button type="submit"
                     class="bg-blue-700 px-5 py-2 rounded-md hover:opacity-90 transition-opacity">Create</button>
             @endempty
         </form>
 
         <div class="flex flex-col">
-            @isset($short_link)
+            @if (session('short_link'))
                 <label for="short_link" class="text-slate-400 mb-1">Your shortened link</label>
-                <input type="text" name="short_link" id="short_link" readonly value="{{ $short_link }}"
+                <input type="text" name="short_link" id="short_link" readonly value="{{ session('short_link') }}"
                     class="bg-slate-800 rounded-md border-slate-600 mb-3">
 
                 <div class="flex gap-3">
-                    <button class="copy-btn bg-emerald-600 px-5 py-2 rounded-md block hover:opacity-90 transition-opacity"
+                    <button
+                        class="copy-btn bg-emerald-600 px-5 py-2 rounded-md block hover:opacity-90 transition-opacity"
                         data-clipboard-target="#short_link">Copy</button>
                     <a href="/link"
                         class="bg-blue-700 px-5 py-2 rounded-md block w-fit hover:opacity-90 transition-opacity">New</a>
                 </div>
-            @endisset
+            @endif
         </div>
     </main>
 
