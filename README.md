@@ -1,3 +1,3 @@
 # URL Shortener
 
-Made with Laravel & MySQL
+Made with Laravel
