@@ -5,35 +5,35 @@ use App\Http\Controllers\LinkController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// Home page
 Route::get('/', function () {
     return view('index');
 });
 
 Route::controller(AuthController::class)->group(function () {
+    // Sign up
     Route::get('/signup', 'get_signup')->name('signup')->middleware('guest');
     Route::post('/signup', 'post_signup');
 
+    // Log in
     Route::get('/login', 'get_login')->name('login')->middleware('guest');
     Route::post('/login', 'post_login');
 
+    // Log out
     Route::post('/logout', 'logout');
 });
 
+// Profile
 Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
 
 Route::controller(LinkController::class)->group(function () {
-    Route::get('/link', 'create');
+    // Create link form
+    Route::get('/link/create', 'create')->name('create');
+
     Route::post('/link', 'store');
+
+    Route::delete('/link/delete/', 'delete');
+
+    // Redirect
     Route::get('/{code}', 'redirect');
 });
