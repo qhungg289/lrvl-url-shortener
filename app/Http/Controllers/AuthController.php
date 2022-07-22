@@ -23,7 +23,7 @@ class AuthController extends Controller
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/link');
+            return redirect()->intended('/link/create');
         }
 
         return back()->withErrors([
@@ -52,7 +52,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('/link');
+        return redirect()->route('create');
     }
 
     public function logout(Request $request)
