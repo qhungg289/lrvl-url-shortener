@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->string('destination');
             $table->string('short_code')->nullable();
-            $table->integer('visits_count')->default(0);
+            $table->integer('visit_count')->default(0);
         });
     }
 
