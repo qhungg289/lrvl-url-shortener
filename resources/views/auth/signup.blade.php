@@ -1,13 +1,9 @@
 <x-layout>
-    <main class="min-h-[calc(100vh-10rem)]">
+    <main class="min-h-[calc(100vh-10rem)] max-w-xl">
         <h1 class="text-4xl font-semibold mb-6">Sign up</h1>
-
-        {{-- <p>Have an account to save your links and see your analytics</p> --}}
 
         <form action="" method="post" class="flex flex-col">
             @csrf
-
-            {{-- name, email, password, password_confirmation --}}
 
             <div class="flex flex-col mb-3">
                 <label for="name" class="text-slate-400 mb-1">Full name</label>

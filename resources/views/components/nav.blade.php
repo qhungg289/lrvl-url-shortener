@@ -1,6 +1,6 @@
 <header class="py-8">
     <nav class="flex justify-between items-center">
-        <a href="/" class="text-rose-600 text-2xl font-bold">LRVL</a>
+        <a href="/" class="text-rose-600 text-4xl font-bold">LRVL</a>
 
         <div class="flex gap-2 relative" x-data="{ open: false }">
             @auth
@@ -29,7 +29,7 @@
                     class="bg-transparent px-5 py-2 rounded-md w-fit hover:opacity-90 hover:bg-slate-800 transition-all flex items-center">Log
                     in</a>
                 <a href="/signup"
-                    class="bg-rose-700 px-5 py-2 rounded-md w-fit hover:opacity-90 transition-opacity flex items-center">Sign
+                    class="bg-transparent hover:bg-rose-600 hover:text-slate-100 border-2 text-rose-600 border-rose-600 px-5 py-2 rounded-md w-fit hover:opacity-90 transition-all flex items-center">Sign
                     up</a>
             @endguest
         </div>

@@ -21,11 +21,12 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="container font-nunito bg-slate-900 text-slate-200">
+<body class="container font-nunito bg-slate-900 text-slate-200 relative">
     <x-nav />
 
     {{ $slot }}
 
+    <x-fab />
     <x-footer />
 </body>
 

@@ -1,5 +1,5 @@
 <x-layout>
-    <main class="min-h-[calc(100vh-10rem)]">
+    <main class="min-h-[calc(100vh-10rem)] max-w-xl">
         <h1 class="text-4xl font-semibold mb-6">Generate new shortened link</h1>
 
         <form action="/link" method="post" class="flex flex-col">
