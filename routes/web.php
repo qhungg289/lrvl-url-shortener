@@ -6,9 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Home page
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', fn () => view('index'));
 
 Route::controller(AuthController::class)->group(function () {
     // Sign up
