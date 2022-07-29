@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\LinkController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\{AuthController, UserController, LinkController};
 use Illuminate\Support\Facades\Route;
 
 // Home page
