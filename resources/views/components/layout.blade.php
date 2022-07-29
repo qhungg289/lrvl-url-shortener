@@ -11,7 +11,6 @@
         rel="stylesheet">
 
     @vite('resources/css/app.css')
-    @secure_asset('public/assets/app.c670da43.css')
     <style>
         [x-cloak] {
             display: none !important;
