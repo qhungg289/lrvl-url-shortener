@@ -29,7 +29,7 @@
                     class="bg-transparent px-5 py-2 rounded-md w-fit hover:opacity-90 hover:bg-slate-800 transition-all flex items-center">Log
                     in</a>
                 <a href="/signup"
-                    class="bg-transparent hover:bg-rose-600 hover:text-slate-100 border-2 text-rose-600 border-rose-600 px-5 py-2 rounded-md w-fit hover:opacity-90 transition-all flex items-center">Sign
+                    class="bg-rose-700 text-slate-100 border-2 border-rose-700 px-5 py-2 rounded-md w-fit hover:opacity-90 transition-all flex items-center">Sign
                     up</a>
             @endguest
         </div>

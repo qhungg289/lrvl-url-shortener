@@ -2,7 +2,7 @@
     <main class="min-h-[calc(100vh-10rem)] flex flex-col justify-center">
         <div>
             <h1 class="text-6xl sm:text-9xl lg:text-10xl font-black mb-3 tracking-widest">LRVL</h1>
-            <p class="text-slate-400 mb-6 lg:text-lg">Free & Open Source URL shortener service</p>
+            <p class="text-slate-400 mb-6 lg:text-lg">Free & simple URL shortener service</p>
             <a href="/link/create"
                 class="bg-blue-700 px-5 py-2 rounded-md w-fit hover:opacity-90 transition-opacity flex items-center">
                 <span>Get started</span>
