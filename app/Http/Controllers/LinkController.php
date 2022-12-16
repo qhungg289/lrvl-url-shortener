@@ -8,12 +8,16 @@ use Illuminate\Http\Request;
 
 class LinkController extends Controller
 {
+    public function __construct(private Base62 $base62)
+    {
+    }
+
     public function create()
     {
         return view('link.create');
     }
 
-    public function store(Request $request, Base62 $base62)
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'link' => 'required|url'
@@ -24,7 +28,7 @@ class LinkController extends Controller
             'user_id' => $request->user()?->id
         ]);
 
-        $link->short_code = $base62->encode($link->id);
+        $link->short_code = $this->base62->encode($link->id);
         $link->save();
 
         return redirect()->route('create')->with([
