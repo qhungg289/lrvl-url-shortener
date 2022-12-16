@@ -3,9 +3,6 @@
 use App\Http\Controllers\{AuthController, UserController, LinkController};
 use Illuminate\Support\Facades\Route;
 
-// Home page
-Route::get('/', fn () => view('index'));
-
 Route::controller(AuthController::class)->group(function () {
     // Sign up
     Route::get('/signup', 'get_signup')->name('signup')->middleware('guest');
@@ -24,11 +21,13 @@ Route::get('/profile', [UserController::class, 'profile'])->name('profile')->mid
 
 Route::controller(LinkController::class)->group(function () {
     // Create link form
-    Route::get('/link/create', 'create')->name('create');
+    Route::get('/', 'create')->name('create');
 
+    // Store new link
     Route::post('/link', 'store');
 
-    Route::delete('/link/delete/', 'delete');
+    // Delete link
+    Route::delete('/link', 'delete');
 
     // Redirect
     Route::get('/{code}', 'redirect');
