@@ -37,7 +37,7 @@
                     <button
                         class="copy-btn bg-emerald-600 px-5 py-2 rounded-md block hover:opacity-90 transition-opacity"
                         data-clipboard-target="#short_link">Copy</button>
-                    <a href="/link"
+                    <a href="/"
                         class="bg-blue-700 px-5 py-2 rounded-md block w-fit hover:opacity-90 transition-opacity">New</a>
                 </div>
             @endif

@@ -49,7 +49,7 @@
                             </td>
                             <td class="p-4 text-right">{{ $link->visit_count }}</td>
                             <td>
-                                <form action="/link/delete" method="post">
+                                <form action="/link" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" name="id" value="{{ $link->id }}">
