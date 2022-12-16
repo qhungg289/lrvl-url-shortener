@@ -23,7 +23,7 @@ class AuthController extends Controller
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/link/create');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
