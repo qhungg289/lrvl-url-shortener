@@ -1,6 +1,10 @@
 <x-layout>
     <main class="min-h-[calc(100vh-10rem)] max-w-xl">
-        <h1 class="text-4xl font-semibold mb-6">Generate new shortened link</h1>
+        @if (session('full_link'))
+            <h1 class="text-4xl font-semibold mb-6">Success 😄</h1>
+        @else
+            <h1 class="text-4xl font-semibold mb-6">Generate a new shortened link 🌐</h1>
+        @endif
 
         <form action="/link" method="post" class="flex flex-col">
             @csrf

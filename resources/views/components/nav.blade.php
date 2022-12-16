@@ -1,6 +1,6 @@
 <header class="py-8">
     <nav class="flex justify-between items-center">
-        <a href="/" class="text-rose-600 text-4xl font-bold">LRVL</a>
+        <a href="/" class="text-rose-600 text-4xl font-bold hover:underline">LRVL</a>
 
         <div class="flex gap-2 relative" x-data="{ open: false }">
             @auth
