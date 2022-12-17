@@ -1,4 +1,4 @@
 # URL Shortener
 
-Made with Laravel  
-[Demo](https://lrvl-url-shortener.fly.dev/)
+Made with Laravel
+[Demo](https://lrvl.fly.dev/)
