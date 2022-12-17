@@ -24,11 +24,11 @@ Route::controller(LinkController::class)->group(function () {
     Route::get('/', 'create')->name('create');
 
     // Store new link
-    Route::post('/link', 'store');
+    Route::post('/link', 'store')->name('store');
 
     // Delete link
-    Route::delete('/link', 'delete');
+    Route::delete('/link', 'delete')->name('delete');
 
     // Redirect
-    Route::get('/{code}', 'redirect');
+    Route::get('/{code}', 'redirect')->name('redirect');
 });
