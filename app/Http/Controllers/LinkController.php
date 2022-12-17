@@ -39,7 +39,13 @@ class LinkController extends Controller
 
     public function delete(Request $request)
     {
-        Link::destroy($request->input('id'));
+        $link = Link::find($request->input('id'));
+
+        if ($request->user()->cannot('delete', $link)) {
+            abort(403);
+        }
+
+        $link->delete();
 
         return redirect('/profile');
     }
