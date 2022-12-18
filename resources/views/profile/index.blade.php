@@ -2,7 +2,7 @@
     <main>
         <h1 class="text-4xl font-semibold mb-6">Profile</h1>
 
-        <div class="mb-2 flex justify-between">
+        <div class="mb-2 gap-4 flex items-center">
             <h2 class="text-2xl font-medium">Your information</h2>
         </div>
         <div class="mb-6 gap-4 flex flex-col md:flex-row">
