@@ -55,7 +55,7 @@ class LinkController extends Controller
         $link = Link::where('short_code', $code)->first();
 
         if (empty($link)) {
-            return abort(404);
+            abort(404);
         }
 
         $link->increment('visit_count');
