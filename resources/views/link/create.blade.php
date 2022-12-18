@@ -6,7 +6,7 @@
             <h1 class="text-4xl font-semibold mb-6">Generate a new shortened link 🌐</h1>
         @endif
 
-        <form action="/link" method="post" class="flex flex-col">
+        <form action="{{ route('store') }}" method="post" class="flex flex-col">
             @csrf
 
             <div class="flex flex-col mb-3">
@@ -41,7 +41,7 @@
                     <button
                         class="copy-btn bg-emerald-600 px-5 py-2 rounded-md block hover:opacity-90 transition-opacity"
                         data-clipboard-target="#short_link">Copy</button>
-                    <a href="/"
+                    <a href="{{ route('create') }}"
                         class="bg-blue-700 px-5 py-2 rounded-md block w-fit hover:opacity-90 transition-opacity">New</a>
                 </div>
             @endif
