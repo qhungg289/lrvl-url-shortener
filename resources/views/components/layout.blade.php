@@ -27,7 +27,6 @@
 
     {{ $slot }}
 
-    <x-fab />
     <x-footer />
 </body>
 
