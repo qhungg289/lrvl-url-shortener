@@ -4,8 +4,8 @@
 
         <div class="flex gap-2 relative" x-data="{ open: false }">
             @auth
-                <button @click="open = !open"
-                    class="border border-slate-700 flex items-center gap-1 px-5 py-2 rounded-md focus:bg-slate-800 hover:bg-slate-800 transition-colors">
+                <button @click="open = !open" :class="open && 'bg-slate-800'"
+                    class="border border-slate-700 flex items-center gap-1 px-5 py-2 rounded-md hover:bg-slate-800 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -14,9 +14,9 @@
                 </button>
 
                 <div x-show="open" x-cloak x-transition @click.outside="open = false"
-                    class="rounded-md border border-slate-700 bg-slate-800 absolute min-w-max top-11 right-0 shadow">
+                    class="rounded-md border border-slate-700 bg-slate-800 absolute min-w-max top-12 right-0 shadow">
                     <a href="/profile"
-                        class="hover:underline block px-4 py-3 m-4 rounded-md hover:bg-slate-600 shadow-2xl transition-colors">
+                        class="block px-4 py-3 m-4 rounded-md border border-slate-700 hover:bg-slate-600 shadow-2xl transition-colors">
                         <div class="flex items-center justify-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="w-14 h-14">
