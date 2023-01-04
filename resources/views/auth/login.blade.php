@@ -27,6 +27,13 @@
                 @enderror
             </div>
 
+            <div class="flex items-center mb-3">
+                <input type="checkbox" name="remember" id="remember"
+                    class="bg-slate-800 rounded border-slate-600 focus:ring-0" checked>
+
+                <label for="remember" class="text-slate-400 ml-1">Remember me</label>
+            </div>
+
             <button type="submit" class="bg-blue-700 px-5 py-2 rounded-md hover:opacity-90 transition-opacity">Log
                 in</button>
         </form>
