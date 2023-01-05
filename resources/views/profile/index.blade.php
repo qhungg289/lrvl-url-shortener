@@ -1,17 +1,28 @@
 <x-layout>
     <main>
-        <a href="{{ url()->previous() }}" class="flex gap-2 hover:underline w-fit text-slate-400">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-            <span>Back</span>
-        </a>
+        @if (url()->previous() != url()->current())
+            <a href="{{ url()->previous() }}" class="flex gap-2 mb-6 hover:underline w-fit text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+                <span>Back</span>
+            </a>
+        @endif
 
-        <h1 class="text-4xl font-semibold my-6">Profile</h1>
+        <h1 class="text-4xl font-semibold mb-6">Profile</h1>
 
         <div class="mb-2 gap-4 flex items-center">
             <h2 class="text-2xl font-medium">Your information</h2>
+            <a class="rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 py-1 px-3 text-sm flex items-center gap-2 transition-colors"
+                href="{{ route('profile.edit') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-3 h-3">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                </svg>
+                <span>Edit</span>
+            </a>
         </div>
         <div class="mb-6 gap-4 flex flex-col md:flex-row">
             <div class="bg-slate-800 p-4 rounded-md">
@@ -24,7 +35,7 @@
             </div>
             <div class="bg-slate-800 p-4 rounded-md">
                 <p class="text-slate-400 mb-1">Joined</p>
-                <p>{{ auth()->user()->created_at }}</p>
+                <p>{{ $joined }}</p>
             </div>
         </div>
 

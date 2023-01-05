@@ -17,7 +17,11 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 // Profile
-Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
+Route::controller(UserController::class)->group(function () {
+    Route::get('/profile', 'profile')->name('profile');
+    Route::get('/profile/edit', 'edit')->name('profile.edit');
+    Route::put('/profile/edit', 'update')->name('profile.update');
+})->middleware('auth');
 
 Route::controller(LinkController::class)->group(function () {
     // Create link form
