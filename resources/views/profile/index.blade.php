@@ -80,7 +80,7 @@
                             x-transition.opacity></div>
 
                         <div class="fixed rounded-md border border-slate-700 bg-slate-800 shadow p-6 mx-auto w-4/5 max-w-lg"
-                            x-show="open" x-trap="open" x-transition>
+                            x-show="open" x-transition>
                             <p class="text-2xl font-semibold mb-6">Do you want to delete this link?</p>
                             <form action="{{ route('delete') }}" method="post">
                                 @csrf
