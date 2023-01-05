@@ -16,8 +16,8 @@ class AuthController extends Controller
     public function post_login(Request $request)
     {
         $validated = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:8'
+            'email' => 'required|email|max:255',
+            'password' => 'required|min:8|max:255'
         ]);
 
         if (Auth::attempt($validated, boolval($request->input('remember')))) {
@@ -39,9 +39,9 @@ class AuthController extends Controller
     public function post_signup(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|min:4',
-            'email' => 'required|email|unique:App\Models\User,email',
-            'password' => 'required|min:8|confirmed'
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:App\Models\User,email|max:255',
+            'password' => 'required|min:8|confirmed|max:255'
         ]);
 
         $user = User::create([
