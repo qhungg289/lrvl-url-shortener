@@ -11,7 +11,7 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'], '/build/assets')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
