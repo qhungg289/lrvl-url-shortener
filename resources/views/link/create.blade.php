@@ -16,7 +16,7 @@
                     <input type="text" name="link" id="link" readonly value="{{ session('full_link') }}"
                         class="bg-slate-800 rounded-md border-slate-600 mb-1">
                 @else
-                    <input type="text" name="link" id="link" placeholder="Paste your link in here..."
+                    <input type="text" name="link" id="link" placeholder="Paste your link in here"
                         value="{{ old('link') }}" class="bg-slate-800 rounded-md border-slate-600 mb-1">
                 @endif
 
@@ -26,13 +26,24 @@
             </div>
 
             @empty(session('short_link'))
+                <div class="flex flex-col mb-3">
+                    <label for="custom_path" class="text-slate-400 mb-1">Custom path <small>(Optional)</small></label>
+
+                    <input type="text" name="custom_path" id="custom_path" placeholder="Enter a custom path for it"
+                        value="{{ old('custom_path') }}" class="bg-slate-800 rounded-md border-slate-600 mb-1">
+
+                    @error('custom_path')
+                        <p class="text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <button type="submit"
                     class="bg-blue-700 px-5 py-2 rounded-md hover:opacity-90 transition-opacity">Create</button>
             @endempty
         </form>
 
-        <div class="flex flex-col">
-            @if (session('short_link'))
+        @if (session('short_link'))
+            <div class="flex flex-col">
                 <label for="short_link" class="text-slate-400 mb-1">Your shortened link</label>
                 <input type="text" name="short_link" id="short_link" readonly value="{{ session('short_link') }}"
                     class="bg-slate-800 rounded-md border-slate-600 mb-3">
@@ -44,8 +55,8 @@
                     <a href="{{ route('create') }}"
                         class="bg-blue-700 px-5 py-2 rounded-md block w-fit hover:opacity-90 transition-opacity">New</a>
                 </div>
-            @endif
-        </div>
+            </div>
+        @endif
     </main>
 
     <script>

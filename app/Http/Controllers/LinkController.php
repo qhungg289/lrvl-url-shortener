@@ -20,7 +20,8 @@ class LinkController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'link' => 'required|url'
+            'link' => 'required|url|max:255',
+            'custom_path' => 'nullable|max:255|unique:links,short_code'
         ]);
 
         $link = Link::create([
@@ -28,7 +29,12 @@ class LinkController extends Controller
             'user_id' => $request->user()?->id
         ]);
 
-        $link->short_code = $this->base62->encode($link->id);
+        if ($validated['custom_path']) {
+            $link->short_code = $validated['custom_path'];
+        } else {
+            $link->short_code = $this->base62->encode($link->id);
+        }
+
         $link->save();
 
         return redirect()->route('create')->with([
