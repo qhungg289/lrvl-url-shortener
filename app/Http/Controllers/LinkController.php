@@ -20,8 +20,8 @@ class LinkController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'link' => 'required|url|max:255',
-            'custom_path' => 'nullable|max:255|unique:links,short_code'
+            'link' => ['required', 'url', 'max:255'],
+            'custom_path' => ['nullable', 'max:255', 'unique:links,short_code', 'regex:/^[^\/\\\[\]{}!@#$%^&*()=+~`<>,;:"\'|?\s]+$/']
         ]);
 
         $link = Link::create([
