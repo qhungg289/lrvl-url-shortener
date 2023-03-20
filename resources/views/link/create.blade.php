@@ -3,7 +3,7 @@
         @if (session('full_link'))
             <h1 class="text-4xl font-semibold mb-6">Success 😄</h1>
         @else
-            <h1 class="text-4xl font-semibold mb-6">Generate a new shortened link 🌐</h1>
+            <h1 class="text-4xl font-semibold mb-6">Generate a new shortened URL 🌐</h1>
         @endif
 
         <form action="{{ route('store') }}" method="post" class="flex flex-col">
